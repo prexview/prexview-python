@@ -12,7 +12,7 @@ xml = '''<?xml version="1.0" encoding="UTF-8"?>
   <lang code="fr">Française</lang>
 </languages>'''
 
-file = '/tmp/test_xml.pdf'
+file = 'test_xml.pdf'
 
 try:
   res = pxv.sendXML(xml, options)
