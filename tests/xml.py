@@ -1,6 +1,7 @@
 # coding: utf-8
 from prexview import Prexview
 
+
 pxv = Prexview()
 options = dict(design='custom-invoice', output='pdf')
 
@@ -11,7 +12,7 @@ xml = '''<?xml version="1.0" encoding="UTF-8"?>
   <lang code="fr">Française</lang>
 </languages>'''
 
-file = '/tmp/test.pdf'
+file = '/tmp/test_xml.pdf'
 
 try:
   res = pxv.sendXML(xml, options)

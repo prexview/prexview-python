@@ -12,7 +12,7 @@ json = '''{
   }
 }'''
 
-file = '/tmp/test.pdf'
+file = '/tmp/test_json.pdf'
 
 try:
   res = pxv.sendJSON(json, options)
