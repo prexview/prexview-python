@@ -22,11 +22,11 @@ setup(
   long_description=long_description,
 
   # The project's main homepage.
-  url='https://github.com/pypa/sampleproject',
+  url='https://github.com/prexview/prexview-python',
 
   # Author details
   author='PrexView',
-  author_email='',
+  author_email='code@prexview.com',
 
   # Choose your license
   license='MIT',
@@ -37,7 +37,7 @@ setup(
     #   3 - Alpha
     #   4 - Beta
     #   5 - Production/Stable
-    'Development Status :: 3 - Alpha',
+    'Development Status :: 4 - Beta',
 
     # Indicate who your project is intended for
     'Intended Audience :: Developers',
@@ -57,7 +57,7 @@ setup(
   ],
 
   # What does your project relate to?
-  keywords='xml json json-to-pdf',
+  keywords=['xml', 'json', 'xml-to-pdf', 'json-to-pdf'],
 
   # You can just specify the packages manually here if your project is
   # simple. Or you can use find_packages().
