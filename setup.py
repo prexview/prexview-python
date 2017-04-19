@@ -11,18 +11,17 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
   long_description = f.read()
 
 setup(
-  name='prexview',
 
-  # Versions should comply with PEP440.  For a discussion on single-sourcing
-  # the version across setup.py and the project code, see
-  # https://packaging.python.org/en/latest/single_source_version.html
-  version='1.0.0',
+  name='prexview',
+  version='1.0.1',
 
   description='A pip library to use PrexView a fast, scalable and very friendly service for programatic HTML, PDF, PNG or JPG generation using JSON or XML data.',
   long_description=long_description,
 
   # The project's main homepage.
   url='https://github.com/prexview/prexview-python',
+
+  download_url="https://github.com/prexview/prexview-python/archive/1.0.1.tar.gz",
 
   # Author details
   author='PrexView',
