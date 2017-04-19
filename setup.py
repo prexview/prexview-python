@@ -1,36 +1,24 @@
-# Always prefer setuptools over distutils
-from setuptools import setup, find_packages
-# To use a consistent encoding
-from codecs import open
-from os import path
-
-here = path.abspath(path.dirname(__file__))
-
-# Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
-  long_description = f.read()
+from setuptools import setup
 
 setup(
-
   name='prexview',
+
   version='1.0.1',
 
   description='A pip library to use PrexView a fast, scalable and very friendly service for programatic HTML, PDF, PNG or JPG generation using JSON or XML data.',
-  long_description=long_description,
 
-  # The project's main homepage.
+  # long_description=long_description,
+
   url='https://github.com/prexview/prexview-python',
 
-  download_url="https://github.com/prexview/prexview-python/archive/1.0.1.tar.gz",
+  download_url='https://github.com/prexview/prexview-python/archive/1.0.1.tar.gz',
 
   # Author details
   author='PrexView',
   author_email='code@prexview.com',
 
-  # Choose your license
   license='MIT',
 
-  # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
   classifiers=[
     # How mature is this project? Common values are
     #   3 - Alpha
@@ -55,31 +43,22 @@ setup(
     'Programming Language :: Python :: 3.5',
   ],
 
-  # What does your project relate to?
   keywords=['xml', 'json', 'xml-to-pdf', 'json-to-pdf'],
 
-  # You can just specify the packages manually here if your project is
-  # simple. Or you can use find_packages().
-  packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+  packages=[],
 
-  # Alternatively, if you want to distribute just a my_module.py, uncomment
-  # this:
   py_modules=["prexview"],
 
-  # List run-time dependencies here.  These will be installed by pip when
-  # your project is installed. For an analysis of "install_requires" vs pip's
-  # requirements files see:
-  # https://packaging.python.org/en/latest/requirements.html
   install_requires=['requests'],
 
   # List additional groups of dependencies here (e.g. development
   # dependencies). You can install these using the following syntax,
   # for example:
   # $ pip install -e .[dev,test]
-  extras_require={
-    'dev': ['check-manifest'],
-    'test': ['coverage'],
-  },
+  # extras_require={
+  #   'dev': ['check-manifest'],
+  #   'test': ['coverage'],
+  # },
 
   # If there are data files included in your packages that need to be
   # installed, specify them here.  If using Python 2.6 or less, then these

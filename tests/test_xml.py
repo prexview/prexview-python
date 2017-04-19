@@ -1,7 +1,6 @@
 # coding: utf-8
 from prexview import Prexview
 
-
 pxv = Prexview()
 options = dict(design='custom-invoice', output='pdf')
 
