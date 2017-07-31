@@ -1,5 +1,5 @@
 from os import getenv
-from json import loads
+from json import loads, JSONEncoder
 from requests import post
 
 class _Singleton(type):
@@ -14,7 +14,7 @@ class _Singleton(type):
 
 class Singleton(_Singleton('SingletonMeta', (object,), {})): pass
 
-class Prexview(Singleton):
+class PrexView(Singleton):
 
   _URL = 'https://api.prexview.com/v1/'
 
@@ -60,16 +60,24 @@ class Prexview(Singleton):
           raise Exception('PrexView content must be a valid JSON string')
 
       else:
-        if options['json'] is not None or type(options['json']) is not dict:
+        if options['json'] is None or type(options['json']) is not dict:
           raise Exception('PrexView content must be a dictionary object or a valid JSON string')
+        else:
+          options['json'] = JSONEncoder().encode(options['json'])
 
     # XML
     else:
       if type(options['xml']) is not str:
         raise Exception('PrexView content must be a valid XML string')
 
-    if type(options['design']) is not str:
-      raise Exception('PrexView property "design" must be passed as a string option')
+    # TODO: design option is deprecated, this should be removed
+    if 'design' in options:
+      print('Prexview property "design" is deprecated, please use "template" property')
+      options['template'] = options['design']
+      del options['design']
+
+    if type(options['template']) is not str:
+      raise Exception('PrexView property "template" must be passed as a string option')
 
     if type(options['output']) is not str:
       raise Exception('PrexView property "output" must be passed as a string option')
@@ -77,8 +85,14 @@ class Prexview(Singleton):
     if options['output'] not in ['html','pdf','png','jpg']:
       raise Exception('PrexView property "output" must be one of these options: html, pdf, png or jpg')
 
-    if 'designBackup' in options and type(options['designBackup']) is not str:
-      raise Exception('PrexView property "designBackup" must be a string')
+    # TODO: designBackup option is deprecated, this shuold be removed
+    if 'designBackup' in options:
+      print('Prexview property "designBackup" is deprecated, please use "templateBackup" property')
+      options['templateBackup'] = options['designBackup']
+      del options['designBackup']
+
+    if 'templateBackup' in options and type(options['templateBackup']) is not str:
+      raise Exception('PrexView property "templateBackup" must be a string')
 
     if 'note' in options:
       if type(options['note']) is not str:

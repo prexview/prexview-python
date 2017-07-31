@@ -4,13 +4,13 @@ from prexview import Prexview
 pxv = Prexview()
 options = {'design': 'custom-invoice', 'output': 'pdf'}
 
-json = '''{
-  "languages": [
+json = {
+  'languages': [
     {"code": "en", "name": "English"},
     {"code": "es", "name": "Español"},
     {"code": "fr", "name": "Française"}
   ]
-}'''
+}
 
 file = 'test_json.pdf'
 
