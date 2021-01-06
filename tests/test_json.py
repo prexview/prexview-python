@@ -1,7 +1,7 @@
 # coding: utf-8
-from prexview import Prexview
+from prexview import PrexView
 
-pxv = Prexview()
+pxv = PrexView()
 options = {'design': 'custom-invoice', 'output': 'pdf'}
 
 json = {
@@ -21,6 +21,6 @@ try:
     f.write(res['file'])
     f.close()
 
-  print 'File created:', file
+  print('File created:', file)
 except Exception as e:
-  print e
+  print(e)

@@ -37,7 +37,7 @@ class PrexView(Singleton):
       'rateRemaining': response.headers['x-ratelimit-remaining'],
     }
 
-    if response.status_code is 200:
+    if response.status_code == 200:
       result['id'] = response.headers['x-transaction-id']
       result['file'] = response.content
       result['responseTime'] = response.headers['x-response-time']
@@ -47,14 +47,14 @@ class PrexView(Singleton):
   def __isJson(self, str):
     try:
       json = loads(str)
-    except ValueError, e:
+    except ValueError as e:
       return False
 
     return True
 
   def __checkOptions(self, _format, options):
     # JSON
-    if _format is 'json':
+    if _format == 'json':
       if type(options['json']) is str:
         if self.__isJson(options['json']) is not True:
           raise Exception('PrexView content must be a valid JSON string')
@@ -104,7 +104,7 @@ class PrexView(Singleton):
     return options
 
   def __checkToken(self):
-    if self.token is None or self.token is '':
+    if self.token is None or self.token == '':
       raise Exception('PrexView environment variable PXV_API_KEY must be set')
 
   def sendXML(self, content, options):

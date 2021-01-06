@@ -1,7 +1,7 @@
 # coding: utf-8
-from prexview import Prexview
+from prexview import PrexView
 
-pxv = Prexview()
+pxv = PrexView()
 options = dict(design='custom-invoice', output='pdf')
 
 xml = '''<?xml version="1.0" encoding="UTF-8"?>
@@ -20,6 +20,6 @@ try:
     f.write(res['file'])
     f.close()
 
-  print 'File created:', file
+  print('File created:', file)
 except Exception as e:
-  print e
+  print(e)
