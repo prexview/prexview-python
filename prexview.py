@@ -28,8 +28,8 @@ class PrexView(Singleton):
 
     response = post(self._URL + 'transform', data = data, headers = headers)
 
-    if response.raise_for_status() is not None:
-      return None
+    if response.status_code != 200:
+      raise Exception(loads(response.content)['error'])
 
     result = {
       'rateLimit': response.headers['x-ratelimit-limit'],
